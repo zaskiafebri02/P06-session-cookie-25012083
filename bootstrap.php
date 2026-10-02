@@ -1,4 +1,10 @@
 <?php
 session_start();
-$_SESSION['cart'] ??= [];
-$_SESSION['flash'] ??= null;
+
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array();
+}
+
+if (!isset($_SESSION['flash'])) {
+    $_SESSION['flash'] = null;
+}
